@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game - Extreme Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Intro Screen -->
+    <div id="introScreen" class="screen active">
+        <div class="intro-container">
+            <h1 class="intro-title">🎮 PONG GAME 🎮</h1>
+            <p class="intro-subtitle">Classic Pong - Challenge the Computer</p>
+            
+            <div class="intro-content">
+                <h2>Select Difficulty Level</h2>
+                
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn easy-btn" onclick="startGame('easy')">
+                        <span class="difficulty-icon">🟢</span>
+                        <span class="difficulty-name">EASY</span>
+                        <span class="difficulty-desc">Slower AI, Slower Ball</span>
+                        <span class="difficulty-extra">Perfect for learning</span>
+                    </button>
+                    
+                    <button class="difficulty-btn medium-btn" onclick="startGame('medium')">
+                        <span class="difficulty-icon">🟡</span>
+                        <span class="difficulty-name">MEDIUM</span>
+                        <span class="difficulty-desc">Balanced Challenge</span>
+                        <span class="difficulty-extra">Standard gameplay</span>
+                    </button>
+                    
+                    <button class="difficulty-btn hard-btn" onclick="startGame('hard')">
+                        <span class="difficulty-icon">🔴</span>
+                        <span class="difficulty-name">HARD</span>
+                        <span class="difficulty-desc">Extremely Fast AI</span>
+                        <span class="difficulty-extra">Very challenging</span>
+                    </button>
+
+                    <button class="difficulty-btn extreme-btn" onclick="startGame('extreme')">
+                        <span class="difficulty-icon">⚡</span>
+                        <span class="difficulty-name">EXTREME</span>
+                        <span class="difficulty-desc">INSANE SPEED</span>
+                        <span class="difficulty-extra">For hardcore players only!</span>
+                    </button>
+                </div>
+
+                <div class="intro-info">
+                    <h3>How to Play</h3>
+                    <p>🖱️ <strong>Move Mouse</strong> up/down to control your paddle</p>
+                    <p>⬆️⬇️ <strong>Or use Arrow Keys</strong> (up/down)</p>
+                    <p>🏆 <strong>First to 5 points</strong> wins the game!</p>
+                    <p>⚡ Ball speed increases with each paddle hit</p>
+                    <p>🎯 Higher difficulty = Faster ball, smarter AI, tougher challenge</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+        <div class="game-header">
+            <button class="menu-btn" onclick="backToMenu()">← Back to Menu</button>
+            <h1>🎮 PONG GAME 🎮</h1>
+            <div class="difficulty-display" id="difficultyDisplay">MEDIUM</div>
+        </div>
+        
+        <div class="container">
+            <div id="gameContainer">
+                <div class="scoreboard">
+                    <div class="score-section">
+                        <div class="score-label">PLAYER</div>
+                        <div class="score-value" id="score1">0</div>
+                    </div>
+                    <div class="score-section">
+                        <div class="score-label">COMPUTER</div>
+                        <div class="score-value" id="score2">0</div>
+                    </div>
+                </div>
+                
+                <div class="center-line"></div>
+                <div id="paddle1"></div>
+                <div id="paddle2"></div>
+                <div id="ball"></div>
+                
+                <div class="game-over" id="gameOver">
+                    <h2 id="gameOverTitle">GAME OVER!</h2>
+                    <p id="gameOverMessage"></p>
+                    <button class="btn-primary" onclick="resetGame()">Play Again</button>
+                    <button class="btn-secondary" onclick="backToMenu()">Back to Menu</button>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <p>📌 <strong>Controls:</strong></p>
+                <p>🖱️ Move mouse up/down OR use ⬆️⬇️ arrow keys</p>
+                <p>First to 5 points wins!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
